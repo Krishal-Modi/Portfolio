@@ -1113,10 +1113,9 @@ body {
         font-size: 1.3rem; 
     }
 }
-
 /* About Section */
 .about-section {
-    background-color: var();
+    background-color: var(--bg-color);
     position: relative;
     padding: 50px 0;
     overflow: hidden;
@@ -1350,8 +1349,9 @@ body {
     margin: 0;
 }
 
-/* Simple Animated Background */
-.animated-bg {
+/* Skills Section Background Animation */
+.skills::before {
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
@@ -1363,12 +1363,12 @@ body {
         rgba(0, 171, 124, 0.08) 50%,
         rgba(0, 135, 97, 0.05) 100%
     );
-    background-size: 400% 400%;
+    background-size: 400% 500%;
     animation: gradientMove 8s ease-in-out infinite;
     z-index: 1;
 }
 
-.animated-bg::before {
+.skills::after {
     content: '';
     position: absolute;
     top: 0;
@@ -1383,6 +1383,7 @@ body {
         rgba(0, 199, 138, 0.02) 64px
     );
     animation: slidePattern 15s linear infinite;
+    z-index: 1;
 }
 
 /* Keyframes for animations */
@@ -1574,9 +1575,8 @@ body {
 }
 
 @keyframes progressShine {
-    0% { opacity: 0.8; }
-    50% { opacity: 0.3; }
-    100% { opacity: 0.8; }
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
 }
 
 .skill-percent {
@@ -1589,6 +1589,7 @@ body {
     text-shadow: 0 0 12px rgba(0, 199, 138, 0.9);
     transition: all 0.4s ease;
 }
+
 .skill-card.in-view .skill-progress {
     width: var(--level);
 }
@@ -1631,13 +1632,13 @@ body {
 
 @media (max-width: 576px) {
     .grid-container {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 12px;
-        padding: 0 12px;
+        grid-template-columns: repeat(2, 1fr); /* Ensure 2 cards per row on mobile */
+        gap: 15px;
+        padding: 0 15px;
     }
     
     .skill-card {
-        padding: 20px 12px;
+        padding: 25px 15px;
         min-width: auto;
     }
     
@@ -1671,10 +1672,9 @@ body {
     }
 }
 
-/* Extra Small Devices */
 @media (max-width: 400px) {
     .grid-container {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* Switch to 1 column on very small screens */
         max-width: 300px;
     }
     
@@ -2698,7 +2698,6 @@ body {
     gap: 40px;
     margin-bottom: 40px;
     position: relative;
-    margin: 0% 0% 2% 3%;
     z-index: 2;
 }
 
