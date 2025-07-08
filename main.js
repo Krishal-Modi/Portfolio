@@ -155,7 +155,7 @@
          // Resume download functionality
         function downloadResume() {
             // Replace 'path/to/your/resume.pdf' with the actual path to your resume file
-            const resumeUrl = './resources/Krishal-Modi-Resume.pdf';
+            const resumeUrl = './resources/Krishal-Modi.pdf';
             
             // Create a temporary anchor element to trigger download
             const link = document.createElement('a');
