@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="./styles.css">
+    <title>Krishal Modi</title>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="#home" class="logo">Krishal Modi</a>
+            
+            <input type="checkbox" id="menu-toggle">
+            <label for="menu-toggle" class="hamburger">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </label>
+            
+            <div class="nav-menu-container">
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="#home" class="nav-link active">Home</a></li>
+                    <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
+                    <li class="nav-item"><a href="#qualification" class="nav-link">Qualification</a></li>
+                    <li class="nav-item"><a href="#projects" class="nav-link">Project</a></li>
+                    <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-bg-elements">
+            <div class="bubble bubble-1"></div>
+            <div class="bubble bubble-2"></div>
+            <div class="bubble bubble-3"></div>
+            <div class="bubble bubble-4"></div>
+        </div>
+        
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h3 class="greeting">
+                        <span class="wave">👋</span> Hi, I'm
+                    </h3>
+                    <h1 class="hero-name">
+                        <span class="name-part-1">Krishal</span><br>
+                        <span class="name-part-2">Modi</span>
+                    </h1>
+                    <p class="hero-description">
+                        Adaptable developer passionate about emerging tech. Driven to build innovative solutions with a focus on quality and continuous improvement</p>
+                    
+                    <div class="social-links" id = "social-circles">
+                        <a href="https://www.linkedin.com/in/krishal-modi-a19885242/" target="_blank" class="social-link" data-tooltip="LinkedIn">
+                            <i class='bx bxl-linkedin'></i>
+                        </a>
+                        <a href="https://github.com/Krishal-Modi" target="_blank" class="social-link" data-tooltip="GitHub">
+                            <i class='bx bxl-github'></i>
+                        </a>
+                        <a href="mailto:krishalmodi2345@gmail.com" class="social-link" data-tooltip="Email">
+                            <i class='bx bx-envelope'></i>
+                        </a>
+                        <a href="#" target="_blank" class="social-link" data-tooltip="Instagram">
+                            <i class='bx bxl-instagram'></i>
+                        </a>
+                        <a href="#" target="_blank" class="social-link" data-tooltip="Twitter">
+                            <i class='bx bxl-twitter'></i>
+                        </a>  
+                    </div>
+                        
+                    <button class="resume-btn" onclick="downloadResume()">
+                        <i class='bx bx-download'></i>
+                        Download Resume
+                    </button>
+                </div>
+                
+                <div class="hero-image">
+                    <div class="image-wrapper">
+                        <div class="floating-tech tech-1"><i class='bx bxl-python'></i></div>
+                        <div class="floating-tech tech-2"><i class='bx bxl-spring-boot'></i></div>
+                        <div class="floating-tech tech-3"><i class='bx bxl-github'></i></div>
+                        <div class="floating-tech tech-4"><i class='bx bxl-java'></i></div>
+                        
+                        <div class="profile-container">
+                            <img src="./resources/fav_and_other_imgs/myimg.jpg" alt="Krishal Modi" class="profile-img">
+                            <div class="profile-glow"></div>
+                        </div>
+                        
+                        <div class="outer-ring"></div>
+                        <div class="inner-ring"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <span>Scroll Down</span>
+        </div>
+    </section>
+
+   
+   
+   <!-- About Section -->
+    <section class="about-section" id="about">
+        <div class="container">
+            <div class="section-header">
+                <h2>About Me</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="about-content">
+                <div class="about-block">
+                    <div class="block-item">
+                        <div class="block-icon">
+                            <i class='bx bx-code-alt'></i>
+                        </div>
+                        <h3>Solution-Oriented Developer</h3>
+                        <p>Working to solve problems through practical, outcome-driven development approaches.</p>
+                    </div>
+                    <div class="block-item">
+                        <div class="block-icon">
+                            <i class='bx bx-brain'></i>
+                        </div>
+                        <h3>Problem Solver</h3>
+                        <p>Breaks down complex issues logically and delivers scalable, smart solutions with critical thinking.</p>
+                    </div>
+                    <div class="block-item">
+                        <div class="block-icon">
+                            <i class='bx bx-chip'></i>
+                        </div>
+                        <h3>Tech Enthusiast</h3>
+                        <p>Passionate about exploring AI, DevOps, and modern cloud technologies to stay ahead in tech.</p>
+                    </div>
+                    <div class="block-item">
+                        <div class="block-icon">
+                            <i class='bx bx-rocket'></i>
+                        </div>
+                        <h3>Quick Learner</h3>
+                        <p>Adapts quickly to new tools, frameworks, and workflows in dynamic development environments.</p>
+                    </div>
+                </div>
+                <div class="about-text">
+                    <p>Hello! My name is Krishal Modi. I have completed my B.Tech in Computer Engineering from Silver Oak University. I am a passionate Software Developer who gained hands-on experience in backend development through an on-site internship, working with Java, Spring Boot, PostgreSQL, and Postman.</p>
+                    <p>Fueled by curiosity and a strong desire to grow, I continually work to expand my skill set and stay updated with evolving technologies. I take pride in building reliable, scalable applications with clean, efficient, and maintainable code.</p>
+                    <p>Beyond backend development, I am actively exploring areas such as system design, cloud deployment, AI/ML and full-stack architecture. I believe that continuous learning is essential to becoming a versatile and future-ready developer in today’s dynamic tech landscape.</p>
+                    <div class="signature">
+                            <span>~ Krishal Modi</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+   
+   
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <!-- Simple Animated Background -->
+        <div class="animated-bg"></div>
+        
+        <div class="section-header">
+            <h2>My <span class="highlight">Skills</span></h2>
+            <div class="section-divider"></div>
+        </div>
+        
+        <div class="grid-container">
+            <div class="skill-card">
+                <div class="skill-icon">
+                    <img src="./resources/languages_imgs/html-5.png" alt="HTML">
+                </div>
+                <h3 class="skill-name">HTML</h3>
+                <div class="skill-bar">
+                    <div class="skill-progress" data-level="90%"></div>
+                </div>
+                <span class="skill-percent">90%</span>
+            </div>
+            
+            <div class="skill-card">
+                <div class="skill-icon">
+                    <img src="./resources/languages_imgs/css-3.png" alt="CSS">
+                </div>
+                <h3 class="skill-name">CSS</h3>
+                <div class="skill-bar">
+                    <div class="skill-progress" data-level="70%"></div>
+                </div>
+                <span class="skill-percent">70%</span>
+            </div>
+            
+            <div class="skill-card">
+                <div class="skill-icon">
+                    <img src="./resources/languages_imgs/js.png" alt="JavaScript">
+                </div>
+                <h3 class="skill-name">JavaScript</h3>
+                <div class="skill-bar">
+                    <div class="skill-progress" data-level="35%"></div>
+                </div>
+                <span class="skill-percent">35%</span>
+            </div>
+            
+            <div class="skill-card">
+                <div class="skill-icon">
+                    <img src="./resources/languages_imgs/letter-c.png" alt="C-Language">
+                </div>
+                <h3 class="skill-name">C</h3>
+                <div class="skill-bar">
+                    <div class="skill-progress" data-level="65%"></div>
+                </div>
+                <span class="skill-percent">65%</span>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon">
+                    <img src="./resources/languages_imgs/python.png" alt="Python">
+                </div>
+                <h3 class="skill-name">Python</h3>
+                <div class="skill-bar">
+                    <div class="skill-progress" data-level="80%"></div>
+                </div>
+                <span class="skill-percent">80%</span>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon">
+                    <img src="./resources/languages_imgs/django.png" alt="Django">
+                </div>
+                <h3 class="skill-name">django</h3>
+                <div class="skill-bar">
+                    <div class="skill-progress" data-level="80%"></div>
+                </div>
+                <span class="skill-percent">85%</span>
+            </div>
+
+
+            <div class="skill-card">
+                <div class="skill-icon">
+                    <img src="./resources/languages_imgs/cplus.png" alt="C++">
+                </div>
+                <h3 class="skill-name">C++</h3>
+                <div class="skill-bar">
+                    <div class="skill-progress" data-level="55%"></div>
+                </div>
+                <span class="skill-percent">55%</span>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon">
+                    <img src="./resources/languages_imgs/ml.png" alt="Machine Learning">
+                </div>
+                <h3 class="skill-name">Machine Learning</h3>
+                <div class="skill-bar">
+                    <div class="skill-progress" data-level="85%"></div>
+                </div>
+                <span class="skill-percent">85%</span>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon">
+                    <img src="./resources/languages_imgs/sklearn.png" alt="SkLearn">
+                </div>
+                <h3 class="skill-name">Scikit Learn</h3>
+                <div class="skill-bar">
+                    <div class="skill-progress" data-level="80%"></div>
+                </div>
+                <span class="skill-percent">80%</span>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon">
+                    <img src="./resources/languages_imgs/tensorflow.png" alt="TensorFlow">
+                </div>
+                <h3 class="skill-name">TensorFlow</h3>
+                <div class="skill-bar">
+                    <div class="skill-progress" data-level="75%"></div>
+                </div>
+                <span class="skill-percent">75%</span>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon">
+                    <img src="./resources/languages_imgs/java.png" alt="Java">
+                </div>
+                <h3 class="skill-name">Java</h3>
+                <div class="skill-bar">
+                    <div class="skill-progress" data-level="80%"></div>
+                </div>
+                <span class="skill-percent">80%</span>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon">
+                    <img src="./resources/languages_imgs/DSA.png" alt="DSA">
+                </div>
+                <h3 class="skill-name">DSA</h3>
+                <div class="skill-bar">
+                    <div class="skill-progress" data-level="65%"></div>
+                </div>
+                <span class="skill-percent">65%</span>
+            </div>
+            
+            <div class="skill-card">
+                <div class="skill-icon">
+                    <img src="./resources/languages_imgs/git-github.png" alt="Git">
+                </div>
+                <h3 class="skill-name">Git/Github</h3>
+                <div class="skill-bar">
+                    <div class="skill-progress" data-level="60%"></div>
+                </div>
+                <span class="skill-percent">60%</span>
+            </div>
+
+             <div class="skill-card">
+                <div class="skill-icon">
+                    <img src="./resources/languages_imgs/postman.png" alt="Postman">
+                </div>
+                <h3 class="skill-name">Postman</h3>
+                <div class="skill-bar">
+                    <div class="skill-progress" data-level="40%"></div>
+                </div>
+                <span class="skill-percent">40%</span>
+            </div>
+
+             <div class="skill-card">
+                <div class="skill-icon">
+                    <img src="./resources/languages_imgs/spring-boot.png" alt="Spring Boot">
+                </div>
+                <h3 class="skill-name">Spring Boot</h3>
+                <div class="skill-bar">
+                    <div class="skill-progress" data-level="80%"></div>
+                </div>
+                <span class="skill-percent">80%</span>
+            </div>
+
+             <div class="skill-card">
+                <div class="skill-icon">
+                    <img src="./resources/languages_imgs/SQL.png" alt="SQL">
+                </div>
+                <h3 class="skill-name">SQL</h3>
+                <div class="skill-bar">
+                    <div class="skill-progress" data-level="50%"></div>
+                </div>
+                <span class="skill-percent">50%</span>
+            </div>
+
+             <div class="skill-card">
+                <div class="skill-icon">
+                    <img src="./resources/languages_imgs/postgresql.png" alt="PostgreSQL">
+                </div>
+                <h3 class="skill-name">PostgreSQL</h3>
+                <div class="skill-bar">
+                    <div class="skill-progress" data-level="60%"></div>
+                </div>
+                <span class="skill-percent">60%</span>
+            </div>
+
+             <div class="skill-card">
+                <div class="skill-icon">
+                    <img src="./resources/languages_imgs/mongo.png" alt="MongoDb">
+                </div>
+                <h3 class="skill-name">MongoDb</h3>
+                <div class="skill-bar">
+                    <div class="skill-progress" data-level="50%"></div>
+                </div>
+                <span class="skill-percent">50%</span>
+            </div>
+
+        </div>
+    </section>
+
+
+
+    <!-- Qualification Section -->
+    <section class="qualification-section" id="qualification">
+        <div class="container">
+            <div class="section-header">
+                <h2>My Qualification</h2>
+                <div class="underline"></div>
+            </div>
+            
+            <div class="qualification-tabs">
+                <button class="tab-btn active" data-tab="education">Education</button>
+                <button class="tab-btn" data-tab="courses">Courses</button>
+                <button class="tab-btn" data-tab="achievements">Achievements</button>
+                <button class="tab-btn" data-tab="languages">Languages</button>
+            </div>
+            
+            <!-- Education Timeline -->
+            <div class="tab-content active" id="education-tab">
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3>2021 - 2025</h3>
+                            <h4>Bachelor of Technology in Computer Engineering</h4>
+                            <p>Silver Oak University</p>
+                            <!-- <p>CGPA: 9.2/10 (Expected)</p> -->
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3>2020 - 2021</h3>
+                            <h4>Higher Secondary Education</h4>
+                            <p>Gujarat Higher Secondary Education Board</p>
+                            <!-- <p>Percentage: 92%</p> -->
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3>2018 - 2019</h3>
+                            <h4>Secondary Education</h4>
+                            <p>Gujarat Secondary Education Board</p>
+                            <!-- <p>Percentage: 95%</p> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Courses Grid -->
+            <div class="tab-content" id="courses-tab">
+                <div class="courses-grid">
+                    
+                    <div class="course-card">
+                        <h3>Python Programming Masterclass</h3>
+                        <p>Udemy</p>
+                        <!-- <span class="course-date">Completed: August 2023</span> -->
+                        <div class="course-highlight"></div>
+                    </div>
+                    <div class="course-card">
+                        <h3>Machine Learning</h3>
+                        <p>Start Tech Academy</p>
+                        <!-- <span class="course-date">Completed: June 2023</span> -->
+                        <div class="course-highlight"></div>
+                    </div>
+                    <div class="course-card">
+                        <h3>Fundamentals of Cyber Security : Hackers Exposed</h3>
+                        <p>Nathan House</p>
+                        <!-- <span class="course-date">Completed: March 2024</span> -->
+                        <div class="course-highlight"></div>
+                    </div>
+                    <div class="course-card">
+                        <h3>Network Security</h3>
+                        <p>Nathan House</p>
+                        <!-- <span class="course-date">Completed: January 2024</span> -->
+                        <div class="course-highlight"></div>
+                    </div>               
+                    <div class="course-card">
+                        <h3>Web Development</h3>
+                        <p>Udemy</p>
+                        <!-- <span class="course-date">Completed: August 2023</span> -->
+                        <div class="course-highlight"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Achievements List -->
+            <div class="tab-content" id="achievements-tab">
+                <div class="achievements-list">
+                    <div class="achievement-card">
+                        <div class="achievement-content">
+                            <h3>Aavishkar (2024)</h3>
+                            <p>Secured 3rd place at the Project Fair hosted by Silver Oak University.</p>
+                            <span class="achievement-date">April 2024</span>
+                        </div>
+                        <div class="achievement-highlight"></div>
+                    </div>
+                    <div class="achievement-card">
+                        <div class="achievement-content">
+                            <h3>Mesohack</h3>
+                            <p>Participant in hackthon organized by Devfolio</p>
+                            <span class="achievement-date">September 2022</span>
+                        </div>
+                        <div class="achievement-highlight"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Languages -->
+            <div class="tab-content" id="languages-tab">
+                <div class="languages-container">
+                    <div class="language-progress">
+                        <div class="language-info">
+                            <span>English</span>
+                            <span>Fluent</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div class="language-progress">
+                        <div class="language-info">
+                            <span>Hindi</span>
+                            <span>Professional</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 80%"></div>
+                        </div>
+                    </div>
+                    <div class="language-progress">
+                        <div class="language-info">
+                            <span>Gujarati</span>
+                            <span>Native</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 95%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Projects Section -->
+    <section class="projects-section" id="projects">
+        <div class="animated-bg">
+                <div class="floating-shape shape-1"></div>
+                <div class="floating-shape shape-2"></div>
+                <div class="floating-shape shape-3"></div>
+                <div class="floating-shape shape-4"></div>
+                <div class="floating-shape shape-5"></div>
+            </div>
+        <div class="container" style="margin: 0% 5% 0% 5%;">
+            <div class="section-header">
+                <h2>My Projects</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="projects-grid">
+
+                <!-- Project 7 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="./resources/projects/software.jpg" alt="Heart Disease Prediction">
+                    </div>
+                    <div class="tech-box">
+                        <div class="tech-stack">
+                            <span>Python</span>
+                            <span>Machine Learning</span>
+                            <span>numpy</span>
+                            <span>pandas</span>
+                            <span>scikit-learn</span>
+                            <span>matplotlib</span>
+                            <span>seaborn</span>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Heart Disease Prediction</h3>
+                        <p>Heart Disease Prediction is a machine learning project that predicts the likelihood of heart disease using a dataset. Built with Python and various ML algorithms, it analyzes patterns for early diagnosis.</p>
+                        <a href="https://github.com/Krishal-Modi/Heart_disease_prediction" target="_blank" class="project-link">View Project <i class='bx bx-link-external'></i></a>
+                    </div>
+                </div>
+
+                    <!-- Project 6 -->
+                <!-- <div class="project-card">
+                    <div class="project-image">
+                        <img src="./resources/projects/CCTV.png" alt="Advanced Surveillance System">
+                    </div>
+                    <div class="tech-box">
+                        <div class="tech-stack">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                            <span>Bootstrap</span>
+                            <span>Python</span>
+                            <span>TensorFlow</span>
+                            <span>Yolo</span>
+                            <span>Django</span>
+                            <span>MongoDb</span>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Advanced Surveillance System</h3>
+                        <p>It is a collaborative project involving a team of frontend, backend, and AI model developers. The AI model detects mischief under CCTV surveillance, ensuring efficient real-time monitoring and tracking.</p>
+                        <a href="https://drive.google.com/drive/folders/1WRhGW1zGx9MRPhMygFgZhbz9c5mVdYP0?usp=sharing" target="_blank" class="project-link">View Project <i class='bx bx-link-external'></i></a>
+                    </div>
+                </div> -->
+
+                
+
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="./resources/projects/software.jpg" alt="HealPoint">
+                    </div>
+                    <div class="tech-box">
+                        <div class="tech-stack">
+                            <span>Java</span>
+                            <span>Spring Boot</span>
+                            <span>REST APIs</span>
+                            <span>Maven</span>
+                            <span>JWT Auth</span>
+                            <span>PostgreSQL</span>
+                            <span>Postman</span>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>HealPoint</h3>
+                        <p>A REST API-based hospital management system with authentication and authorization, doctor's slot booking by specialization, inventory tracking with stock limits, cart functionality, and billing system.</p>
+                        <a href="https://github.com/Krishal-Modi/HealPoint" target="_blank" class="project-link">View Project <i class='bx bx-link-external'></i></a>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="./resources/projects/resume.png" alt="Resume Insights">
+                    </div>
+                    <div class="tech-box">
+                        <div class="tech-stack">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                            <span>Bootstrap</span>
+                            <span>Python</span>
+                            <span>Django</span>
+                            <span>SQLite</span>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Resume Insights</h3>
+                        <p>A web app with login/signup, ATS score checking, email/phone extraction from resumes, and email notifications. Offers a smooth user interface for improved experience.</p>
+                        <a href="https://github.com/Krishal-Modi/Resume_Insights" target="_blank" class="project-link">View Project <i class='bx bx-link-external'></i></a>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="./resources/projects/software.jpg" alt="Banking Application">
+                    </div>
+                    <div class="tech-box">
+                        <div class="tech-stack">
+                            <span>Java</span>
+                            <span>Spring Boot</span>
+                            <span>REST APIs</span>
+                            <span>Maven</span>
+                            <span>JWT Auth</span>
+                            <span>PostgreSQL</span>
+                            <span>Postman</span>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Banking Application</h3>
+                        <p>A secure REST API with auth to manage user accounts, handle transactions, check balance, view passbook, and transfer funds. Includes login token expiry and loan calculator.</p>
+                        <a href="https://github.com/Krishal-Modi/Banking-Application-Rest-API" target="_blank" class="project-link">View Project <i class='bx bx-link-external'></i></a>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="./resources/projects/attendance.png" alt="Attendance Management System">
+                    </div>
+                    <div class="tech-box">
+                        <div class="tech-stack">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                            <span>Bootstrap</span>
+                            <span>Python</span>
+                            <span>Django</span>
+                            <span>SQLite</span>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Attendance Management System</h3>
+                        <p>Enables users to log in, manage student lists, mark attendance, and download records in CSV or PDF format.</p>
+                        <a href="https://github.com/Krishal-Modi/Attendance-Management-System" target="_blank" class="project-link">View Project <i class='bx bx-link-external'></i></a>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="./resources/projects/software.jpg" alt="Blogzy">
+                    </div>
+                    <div class="tech-box">
+                        <div class="tech-stack">
+                            <span>Java</span>
+                            <span>Spring Boot</span>
+                            <span>REST APIs</span>
+                            <span>Maven</span>
+                            <span>JWT Auth</span>
+                            <span>PostgreSQL</span>
+                            <span>Postman</span>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Blogzy</h3>
+                        <p>A REST API-based microblogging system with auth, where users can post, view, like, comment, reply, and delete blogs—similar to social media's feed.</p>
+                        <a href="https://github.com/Krishal-Modi/Blogzy" target="_blank" class="project-link">View Project <i class='bx bx-link-external'></i></a>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <!-- <div class="project-card">
+                    <div class="project-image">
+                        <img src="./resources/projects/CCTV.png" alt="Advanced Surveillance System">
+                    </div>
+                    <div class="tech-box">
+                        <div class="tech-stack">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                            <span>Bootstrap</span>
+                            <span>Python</span>
+                            <span>TensorFlow</span>
+                            <span>Yolo</span>
+                            <span>Django</span>
+                            <span>MongoDb</span>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Advanced Surveillance System</h3>
+                        <p>It is a collaborative project involving a team of frontend, backend, and AI model developers. The AI model detects mischief under CCTV surveillance, ensuring efficient real-time monitoring and tracking.</p>
+                        <a href="https://drive.google.com/drive/folders/1WRhGW1zGx9MRPhMygFgZhbz9c5mVdYP0?usp=sharing" target="_blank" class="project-link">View Project <i class='bx bx-link-external'></i></a>
+                    </div>
+                </div> -->
+
+                <!-- Project 7 -->
+                <!-- <div class="project-card">
+                    <div class="project-image">
+                        <img src="./resources/projects/software.jpg" alt="Heart Disease Prediction">
+                    </div>
+                    <div class="tech-box">
+                        <div class="tech-stack">
+                            <span>Python</span>
+                            <span>Machine Learning</span>
+                            <span>numpy</span>
+                            <span>pandas</span>
+                            <span>scikit-learn</span>
+                            <span>matplotlib</span>
+                            <span>seaborn</span>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Heart Disease Prediction</h3>
+                        <p>Heart Disease Prediction is a machine learning project that predicts the likelihood of heart disease using a dataset. Built with Python and various ML algorithms, it analyzes patterns for early diagnosis.</p>
+                        <a href="https://github.com/Krishal-Modi/Heart_disease_prediction" target="_blank" class="project-link">View Project <i class='bx bx-link-external'></i></a>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+              
+        <div class="container">
+            <div class="section-header">
+                <h2>Get In Touch</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Let's Connect</h3>
+                    <button class="email-btn" onclick="window.location.href='mailto:krishalmodi2345@gmail.com'">
+                        <i class='bx bx-envelope'></i> Send Email
+                    </button>
+                  
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <i class='bx bx-envelope'></i>
+                            <div>
+                                <h4>Email</h4>
+                                <a href="mailto:krishalmodi2345@gmail.com">krishalmodi2345@gmail.com</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <i class='bx bx-phone'></i>
+                            <div>
+                                <h4>Phone</h4>
+                                <a href="tel:9428681321">+91 9428681321</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <i class='bx bxl-linkedin'></i>
+                            <div>
+                                <h4>LinkedIn</h4>
+                                <a href="https://www.linkedin.com/in/krishal-modi-a19885242/" target="_blank">Krishal Modi</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <i class='bx bxl-twitter'></i>
+                            <div>
+                                <h4>Twitter</h4>
+                                <a href="#" target="_blank">@krishalmodi</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="https://github.com/Krishal-Modi" target="_blank"><i class='bx bxl-github'></i></a>
+                        <a href="#" target="_blank"><i class='bx bxl-twitter'></i></a>
+                        <a href="https://www.linkedin.com/in/krishal-modi-a19885242/" target="_blank"><i class='bx bxl-linkedin'></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="#">Krishal Modi</a>
+                    <!-- <p>Full Stack Developer & AI Enthusiast</p> -->
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li><i class='bx bx-envelope'></i> krishalmodi2345@gmail.com</li>
+                        <li><i class='bx bx-phone'></i> +91 9428681321</li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h4>Follow Me</h4>
+                    <div class="social-icons">
+                        <a href="https://github.com/Krishal-Modi" target="_blank"><i class='bx bxl-github'></i></a>
+                        <a href="https://www.linkedin.com/in/krishal-modi-a19885242/" target="_blank"><i class='bx bxl-linkedin'></i></a>
+                        <a href="#" target="_blank"><i class='bx bxl-twitter'></i></a>
+                        <a href="#" target="_blank"><i class='bx bxl-instagram'></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Krishal Modi. All Rights Reserved.</p>
+                <p>Designed & Developed with <i class='bx bxs-heart'></i> by Krishal Modi</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#home" class="back-to-top" id="backToTop"><i class='bx bx-up-arrow-alt'></i></a>
+
+
+    
+    <script src="./main.js"></script>
+</body>
+
+</html>
