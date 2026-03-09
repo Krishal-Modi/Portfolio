@@ -32,6 +32,8 @@ body {
     color: #fff;
     overflow-x: hidden;
     line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 a {
@@ -41,6 +43,25 @@ a {
 
 ul {
     list-style: none;
+}
+
+/* Performance optimization for frequently animated elements */
+.skill-item, .project-card, .nav-link, .skill-progress {
+    will-change: transform;
+}
+
+.skill-item:hover, .project-card:hover, .nav-link:hover {
+    will-change: auto;
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
 }
 
 /* Navbar Styles */
@@ -53,6 +74,7 @@ ul {
     z-index: 1000;
     transition: all 0.4s cubic-bezier(0.65, 0, 0.35, 1);
     padding: 0.5rem 0;
+    contain: layout style;
 }
 
 .navbar-container {
@@ -1523,6 +1545,7 @@ ul {
     padding: 16px 20px;
     transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     backdrop-filter: blur(5px);
+    contain: layout style paint;
 }
 
 .skill-item:hover {
@@ -2281,6 +2304,7 @@ ul {
     backdrop-filter: blur(5px);
     display: flex;
     flex-direction: column;
+    contain: layout style paint;
 }
 
 .project-card:hover {
