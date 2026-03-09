@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="./styles.css">
+    <link rel="icon" type="image/png" href="./resources/fav_and_other_imgs/favicon.png">
     <title>Krishal Modi</title>
 </head>
 <body>
@@ -55,6 +56,10 @@
                         <span class="name-part-1">Krishal</span><br>
                         <span class="name-part-2">Modi</span>
                     </h1>
+                    <div class="typing-wrapper">
+                        <span class="typing-text" id="typing-text"></span>
+                        <span class="typing-cursor">|</span>
+                    </div>
                     <p class="hero-description">
                         Adaptable developer passionate about emerging tech. Driven to build innovative solutions with a focus on quality and continuous improvement</p>
                     
@@ -164,215 +169,172 @@
    
 
     <!-- Skills Section -->
-    <section id="skills">
-        <!-- Simple Animated Background -->
+    <section id="skills" class="skills">
         <div class="animated-bg"></div>
         
         <div class="section-header">
             <h2>My <span class="highlight">Skills</span></h2>
             <div class="section-divider"></div>
         </div>
+
+        <div class="skills-tabs">
+            <button class="skill-tab-btn active" data-skill-tab="all">All</button>
+            <button class="skill-tab-btn" data-skill-tab="languages">Languages</button>
+            <button class="skill-tab-btn" data-skill-tab="frameworks">Frameworks</button>
+            <button class="skill-tab-btn" data-skill-tab="aiml">AI / ML</button>
+            <button class="skill-tab-btn" data-skill-tab="databases">Databases</button>
+            <button class="skill-tab-btn" data-skill-tab="tools">Tools</button>
+        </div>
         
-        <div class="grid-container">
-            <div class="skill-card">
-                <div class="skill-icon">
-                    <img src="./resources/languages_imgs/html-5.png" alt="HTML">
+        <div class="skills-grid">
+            <!-- Languages -->
+            <div class="skill-item" data-category="languages">
+                <div class="skill-icon-sm"><img src="./resources/languages_imgs/html-5.png" alt="HTML"></div>
+                <div class="skill-details">
+                    <div class="skill-top"><span class="skill-name">HTML</span><span class="skill-percent">90%</span></div>
+                    <div class="skill-bar"><div class="skill-progress" data-level="90%"></div></div>
                 </div>
-                <h3 class="skill-name">HTML</h3>
-                <div class="skill-bar">
-                    <div class="skill-progress" data-level="90%"></div>
-                </div>
-                <span class="skill-percent">90%</span>
-            </div>
-            
-            <div class="skill-card">
-                <div class="skill-icon">
-                    <img src="./resources/languages_imgs/css-3.png" alt="CSS">
-                </div>
-                <h3 class="skill-name">CSS</h3>
-                <div class="skill-bar">
-                    <div class="skill-progress" data-level="70%"></div>
-                </div>
-                <span class="skill-percent">70%</span>
-            </div>
-            
-            <div class="skill-card">
-                <div class="skill-icon">
-                    <img src="./resources/languages_imgs/js.png" alt="JavaScript">
-                </div>
-                <h3 class="skill-name">JavaScript</h3>
-                <div class="skill-bar">
-                    <div class="skill-progress" data-level="35%"></div>
-                </div>
-                <span class="skill-percent">35%</span>
-            </div>
-            
-            <div class="skill-card">
-                <div class="skill-icon">
-                    <img src="./resources/languages_imgs/letter-c.png" alt="C-Language">
-                </div>
-                <h3 class="skill-name">C</h3>
-                <div class="skill-bar">
-                    <div class="skill-progress" data-level="65%"></div>
-                </div>
-                <span class="skill-percent">65%</span>
             </div>
 
-            <div class="skill-card">
-                <div class="skill-icon">
-                    <img src="./resources/languages_imgs/python.png" alt="Python">
+            <div class="skill-item" data-category="languages">
+                <div class="skill-icon-sm"><img src="./resources/languages_imgs/css-3.png" alt="CSS"></div>
+                <div class="skill-details">
+                    <div class="skill-top"><span class="skill-name">CSS</span><span class="skill-percent">70%</span></div>
+                    <div class="skill-bar"><div class="skill-progress" data-level="70%"></div></div>
                 </div>
-                <h3 class="skill-name">Python</h3>
-                <div class="skill-bar">
-                    <div class="skill-progress" data-level="80%"></div>
-                </div>
-                <span class="skill-percent">80%</span>
             </div>
 
-            <div class="skill-card">
-                <div class="skill-icon">
-                    <img src="./resources/languages_imgs/django.png" alt="Django">
+            <div class="skill-item" data-category="languages">
+                <div class="skill-icon-sm"><img src="./resources/languages_imgs/js.png" alt="JavaScript"></div>
+                <div class="skill-details">
+                    <div class="skill-top"><span class="skill-name">JavaScript</span><span class="skill-percent">35%</span></div>
+                    <div class="skill-bar"><div class="skill-progress" data-level="35%"></div></div>
                 </div>
-                <h3 class="skill-name">django</h3>
-                <div class="skill-bar">
-                    <div class="skill-progress" data-level="80%"></div>
-                </div>
-                <span class="skill-percent">85%</span>
             </div>
 
-
-            <div class="skill-card">
-                <div class="skill-icon">
-                    <img src="./resources/languages_imgs/cplus.png" alt="C++">
+            <div class="skill-item" data-category="languages">
+                <div class="skill-icon-sm"><img src="./resources/languages_imgs/letter-c.png" alt="C"></div>
+                <div class="skill-details">
+                    <div class="skill-top"><span class="skill-name">C</span><span class="skill-percent">65%</span></div>
+                    <div class="skill-bar"><div class="skill-progress" data-level="65%"></div></div>
                 </div>
-                <h3 class="skill-name">C++</h3>
-                <div class="skill-bar">
-                    <div class="skill-progress" data-level="55%"></div>
-                </div>
-                <span class="skill-percent">55%</span>
             </div>
 
-            <div class="skill-card">
-                <div class="skill-icon">
-                    <img src="./resources/languages_imgs/ml.png" alt="Machine Learning">
+            <div class="skill-item" data-category="languages">
+                <div class="skill-icon-sm"><img src="./resources/languages_imgs/cplus.png" alt="C++"></div>
+                <div class="skill-details">
+                    <div class="skill-top"><span class="skill-name">C++</span><span class="skill-percent">55%</span></div>
+                    <div class="skill-bar"><div class="skill-progress" data-level="55%"></div></div>
                 </div>
-                <h3 class="skill-name">Machine Learning</h3>
-                <div class="skill-bar">
-                    <div class="skill-progress" data-level="85%"></div>
-                </div>
-                <span class="skill-percent">85%</span>
             </div>
 
-            <div class="skill-card">
-                <div class="skill-icon">
-                    <img src="./resources/languages_imgs/sklearn.png" alt="SkLearn">
+            <div class="skill-item" data-category="languages">
+                <div class="skill-icon-sm"><img src="./resources/languages_imgs/python.png" alt="Python"></div>
+                <div class="skill-details">
+                    <div class="skill-top"><span class="skill-name">Python</span><span class="skill-percent">80%</span></div>
+                    <div class="skill-bar"><div class="skill-progress" data-level="80%"></div></div>
                 </div>
-                <h3 class="skill-name">Scikit Learn</h3>
-                <div class="skill-bar">
-                    <div class="skill-progress" data-level="80%"></div>
-                </div>
-                <span class="skill-percent">80%</span>
             </div>
 
-            <div class="skill-card">
-                <div class="skill-icon">
-                    <img src="./resources/languages_imgs/tensorflow.png" alt="TensorFlow">
+            <div class="skill-item" data-category="languages">
+                <div class="skill-icon-sm"><img src="./resources/languages_imgs/java.png" alt="Java"></div>
+                <div class="skill-details">
+                    <div class="skill-top"><span class="skill-name">Java</span><span class="skill-percent">80%</span></div>
+                    <div class="skill-bar"><div class="skill-progress" data-level="80%"></div></div>
                 </div>
-                <h3 class="skill-name">TensorFlow</h3>
-                <div class="skill-bar">
-                    <div class="skill-progress" data-level="75%"></div>
-                </div>
-                <span class="skill-percent">75%</span>
             </div>
 
-            <div class="skill-card">
-                <div class="skill-icon">
-                    <img src="./resources/languages_imgs/java.png" alt="Java">
+            <!-- Frameworks -->
+            <div class="skill-item" data-category="frameworks">
+                <div class="skill-icon-sm"><img src="./resources/languages_imgs/spring-boot.png" alt="Spring Boot"></div>
+                <div class="skill-details">
+                    <div class="skill-top"><span class="skill-name">Spring Boot</span><span class="skill-percent">80%</span></div>
+                    <div class="skill-bar"><div class="skill-progress" data-level="80%"></div></div>
                 </div>
-                <h3 class="skill-name">Java</h3>
-                <div class="skill-bar">
-                    <div class="skill-progress" data-level="80%"></div>
-                </div>
-                <span class="skill-percent">80%</span>
             </div>
 
-            <div class="skill-card">
-                <div class="skill-icon">
-                    <img src="./resources/languages_imgs/DSA.png" alt="DSA">
+            <div class="skill-item" data-category="frameworks">
+                <div class="skill-icon-sm"><img src="./resources/languages_imgs/django.png" alt="Django"></div>
+                <div class="skill-details">
+                    <div class="skill-top"><span class="skill-name">Django</span><span class="skill-percent">85%</span></div>
+                    <div class="skill-bar"><div class="skill-progress" data-level="85%"></div></div>
                 </div>
-                <h3 class="skill-name">DSA</h3>
-                <div class="skill-bar">
-                    <div class="skill-progress" data-level="65%"></div>
-                </div>
-                <span class="skill-percent">65%</span>
-            </div>
-            
-            <div class="skill-card">
-                <div class="skill-icon">
-                    <img src="./resources/languages_imgs/git-github.png" alt="Git">
-                </div>
-                <h3 class="skill-name">Git/Github</h3>
-                <div class="skill-bar">
-                    <div class="skill-progress" data-level="60%"></div>
-                </div>
-                <span class="skill-percent">60%</span>
             </div>
 
-             <div class="skill-card">
-                <div class="skill-icon">
-                    <img src="./resources/languages_imgs/postman.png" alt="Postman">
+            <!-- AI / ML -->
+            <div class="skill-item" data-category="aiml">
+                <div class="skill-icon-sm"><img src="./resources/languages_imgs/ml.png" alt="ML"></div>
+                <div class="skill-details">
+                    <div class="skill-top"><span class="skill-name">Machine Learning</span><span class="skill-percent">85%</span></div>
+                    <div class="skill-bar"><div class="skill-progress" data-level="85%"></div></div>
                 </div>
-                <h3 class="skill-name">Postman</h3>
-                <div class="skill-bar">
-                    <div class="skill-progress" data-level="40%"></div>
-                </div>
-                <span class="skill-percent">40%</span>
             </div>
 
-             <div class="skill-card">
-                <div class="skill-icon">
-                    <img src="./resources/languages_imgs/spring-boot.png" alt="Spring Boot">
+            <div class="skill-item" data-category="aiml">
+                <div class="skill-icon-sm"><img src="./resources/languages_imgs/sklearn.png" alt="Scikit Learn"></div>
+                <div class="skill-details">
+                    <div class="skill-top"><span class="skill-name">Scikit Learn</span><span class="skill-percent">80%</span></div>
+                    <div class="skill-bar"><div class="skill-progress" data-level="80%"></div></div>
                 </div>
-                <h3 class="skill-name">Spring Boot</h3>
-                <div class="skill-bar">
-                    <div class="skill-progress" data-level="80%"></div>
-                </div>
-                <span class="skill-percent">80%</span>
             </div>
 
-             <div class="skill-card">
-                <div class="skill-icon">
-                    <img src="./resources/languages_imgs/SQL.png" alt="SQL">
+            <div class="skill-item" data-category="aiml">
+                <div class="skill-icon-sm"><img src="./resources/languages_imgs/tensorflow.png" alt="TensorFlow"></div>
+                <div class="skill-details">
+                    <div class="skill-top"><span class="skill-name">TensorFlow</span><span class="skill-percent">75%</span></div>
+                    <div class="skill-bar"><div class="skill-progress" data-level="75%"></div></div>
                 </div>
-                <h3 class="skill-name">SQL</h3>
-                <div class="skill-bar">
-                    <div class="skill-progress" data-level="50%"></div>
-                </div>
-                <span class="skill-percent">50%</span>
             </div>
 
-             <div class="skill-card">
-                <div class="skill-icon">
-                    <img src="./resources/languages_imgs/postgresql.png" alt="PostgreSQL">
+            <!-- Databases -->
+            <div class="skill-item" data-category="databases">
+                <div class="skill-icon-sm"><img src="./resources/languages_imgs/SQL.png" alt="SQL"></div>
+                <div class="skill-details">
+                    <div class="skill-top"><span class="skill-name">SQL</span><span class="skill-percent">50%</span></div>
+                    <div class="skill-bar"><div class="skill-progress" data-level="50%"></div></div>
                 </div>
-                <h3 class="skill-name">PostgreSQL</h3>
-                <div class="skill-bar">
-                    <div class="skill-progress" data-level="60%"></div>
-                </div>
-                <span class="skill-percent">60%</span>
             </div>
 
-             <div class="skill-card">
-                <div class="skill-icon">
-                    <img src="./resources/languages_imgs/mongo.png" alt="MongoDb">
+            <div class="skill-item" data-category="databases">
+                <div class="skill-icon-sm"><img src="./resources/languages_imgs/postgresql.png" alt="PostgreSQL"></div>
+                <div class="skill-details">
+                    <div class="skill-top"><span class="skill-name">PostgreSQL</span><span class="skill-percent">60%</span></div>
+                    <div class="skill-bar"><div class="skill-progress" data-level="60%"></div></div>
                 </div>
-                <h3 class="skill-name">MongoDb</h3>
-                <div class="skill-bar">
-                    <div class="skill-progress" data-level="50%"></div>
-                </div>
-                <span class="skill-percent">50%</span>
             </div>
 
+            <div class="skill-item" data-category="databases">
+                <div class="skill-icon-sm"><img src="./resources/languages_imgs/mongo.png" alt="MongoDB"></div>
+                <div class="skill-details">
+                    <div class="skill-top"><span class="skill-name">MongoDB</span><span class="skill-percent">50%</span></div>
+                    <div class="skill-bar"><div class="skill-progress" data-level="50%"></div></div>
+                </div>
+            </div>
+
+            <!-- Tools -->
+            <div class="skill-item" data-category="tools">
+                <div class="skill-icon-sm"><img src="./resources/languages_imgs/DSA.png" alt="DSA"></div>
+                <div class="skill-details">
+                    <div class="skill-top"><span class="skill-name">DSA</span><span class="skill-percent">65%</span></div>
+                    <div class="skill-bar"><div class="skill-progress" data-level="65%"></div></div>
+                </div>
+            </div>
+
+            <div class="skill-item" data-category="tools">
+                <div class="skill-icon-sm"><img src="./resources/languages_imgs/git-github.png" alt="Git"></div>
+                <div class="skill-details">
+                    <div class="skill-top"><span class="skill-name">Git / GitHub</span><span class="skill-percent">60%</span></div>
+                    <div class="skill-bar"><div class="skill-progress" data-level="60%"></div></div>
+                </div>
+            </div>
+
+            <div class="skill-item" data-category="tools">
+                <div class="skill-icon-sm"><img src="./resources/languages_imgs/postman.png" alt="Postman"></div>
+                <div class="skill-details">
+                    <div class="skill-top"><span class="skill-name">Postman</span><span class="skill-percent">40%</span></div>
+                    <div class="skill-bar"><div class="skill-progress" data-level="40%"></div></div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -851,7 +813,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Krishal Modi. All Rights Reserved.</p>
+                <p>&copy; <span id="current-year">2025</span> Krishal Modi. All Rights Reserved.</p>
                 <p>Designed & Developed with <i class='bx bxs-heart'></i> by Krishal Modi</p>
             </div>
         </div>

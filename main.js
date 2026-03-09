@@ -29,16 +29,15 @@
 
         window.addEventListener('scroll', requestNavbarUpdate);
 
-        // Active section highlighting
+        // Active section highlighting — fixed to target actual sections with IDs
         function setActiveNavLink() {
-            const sections = document.querySelectorAll('.content-section');
+            const sections = document.querySelectorAll('section[id]');
             const navLinks = document.querySelectorAll('.nav-link');
             
             let current = '';
             sections.forEach(section => {
                 const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (window.scrollY >= (sectionTop - 100)) {
+                if (window.scrollY >= (sectionTop - 150)) {
                     current = section.getAttribute('id');
                 }
             });
@@ -53,6 +52,20 @@
 
         window.addEventListener('scroll', setActiveNavLink);
 
+        // Back to top button visibility
+        function updateBackToTop() {
+            const backToTop = document.getElementById('backToTop');
+            if (backToTop) {
+                if (window.scrollY > 400) {
+                    backToTop.classList.add('active');
+                } else {
+                    backToTop.classList.remove('active');
+                }
+            }
+        }
+
+        window.addEventListener('scroll', updateBackToTop);
+
         // Enhanced initialization
         document.addEventListener('DOMContentLoaded', function() {
             const navLinks = document.querySelectorAll('.nav-link');
@@ -60,7 +73,7 @@
                 link.style.animationDelay = `${0.1 * index}s`;
             });
             
-            // Improved smooth scrolling
+            // Smooth scrolling for all anchor links
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function(e) {
                     e.preventDefault();
@@ -124,6 +137,131 @@
 
             // Set initial active section
             setActiveNavLink();
+            updateBackToTop();
+
+            // Dynamic year in footer
+            const yearEl = document.getElementById('current-year');
+            if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+            // ---- Qualification Tab Switching ----
+            const tabBtns = document.querySelectorAll('.tab-btn');
+            const tabContents = document.querySelectorAll('.tab-content');
+
+            tabBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    tabBtns.forEach(b => b.classList.remove('active'));
+                    tabContents.forEach(c => c.classList.remove('active'));
+
+                    this.classList.add('active');
+                    const tabId = this.getAttribute('data-tab') + '-tab';
+                    const target = document.getElementById(tabId);
+                    if (target) target.classList.add('active');
+                });
+            });
+
+            // ---- Skill Bar Animation on Scroll ----
+            const skillItems = document.querySelectorAll('.skill-item');
+            const skillObserver = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const item = entry.target;
+                        const progressBar = item.querySelector('.skill-progress');
+                        if (progressBar) {
+                            const level = progressBar.getAttribute('data-level');
+                            progressBar.style.setProperty('--level', level);
+                            item.classList.add('in-view');
+                        }
+                        skillObserver.unobserve(item);
+                    }
+                });
+            }, { threshold: 0.3 });
+
+            skillItems.forEach(item => skillObserver.observe(item));
+
+            // ---- Skill Tab Filtering ----
+            const skillTabBtns = document.querySelectorAll('.skill-tab-btn');
+
+            skillTabBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    skillTabBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+
+                    const category = this.getAttribute('data-skill-tab');
+
+                    skillItems.forEach(item => {
+                        if (category === 'all' || item.getAttribute('data-category') === category) {
+                            item.classList.remove('hidden');
+                            // Re-trigger bar animation for newly shown items
+                            const bar = item.querySelector('.skill-progress');
+                            if (bar && !item.classList.contains('in-view')) {
+                                const level = bar.getAttribute('data-level');
+                                bar.style.setProperty('--level', level);
+                                item.classList.add('in-view');
+                            }
+                        } else {
+                            item.classList.add('hidden');
+                        }
+                    });
+                });
+            });
+
+            // ---- Typing Animation ----
+            const typingEl = document.getElementById('typing-text');
+            if (typingEl) {
+                const titles = [
+                    'Backend Developer',
+                    'Java & Spring Boot Enthusiast',
+                    'Machine Learning Explorer',
+                    'Problem Solver'
+                ];
+                let titleIndex = 0;
+                let charIndex = 0;
+                let isDeleting = false;
+
+                function typeEffect() {
+                    const current = titles[titleIndex];
+                    if (isDeleting) {
+                        typingEl.textContent = current.substring(0, charIndex - 1);
+                        charIndex--;
+                    } else {
+                        typingEl.textContent = current.substring(0, charIndex + 1);
+                        charIndex++;
+                    }
+
+                    let speed = isDeleting ? 40 : 80;
+
+                    if (!isDeleting && charIndex === current.length) {
+                        speed = 2000; // pause at end
+                        isDeleting = true;
+                    } else if (isDeleting && charIndex === 0) {
+                        isDeleting = false;
+                        titleIndex = (titleIndex + 1) % titles.length;
+                        speed = 400;
+                    }
+
+                    setTimeout(typeEffect, speed);
+                }
+
+                typeEffect();
+            }
+
+            // ---- Scroll-based reveal animation ----
+            const revealElements = document.querySelectorAll(
+                '.block-item, .about-text, .project-card, .contact-method'
+            );
+            const revealObserver = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('revealed');
+                        revealObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.15 });
+
+            revealElements.forEach(el => {
+                el.classList.add('reveal-on-scroll');
+                revealObserver.observe(el);
+            });
         });
 
         // Prevent menu from staying open on orientation change
@@ -135,62 +273,16 @@
             }, 500);
         });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-         // Resume download functionality
+        // Resume download functionality
         function downloadResume() {
-            // Replace 'path/to/your/resume.pdf' with the actual path to your resume file
             const resumeUrl = './resources/Krishal-Modi.pdf';
-            
-            // Create a temporary anchor element to trigger download
             const link = document.createElement('a');
             link.href = resumeUrl;
-            link.download = 'Krishal-Modi-Resume.pdf'; // The name for the downloaded file
-            
-            // Append to body, click, and remove
+            link.download = 'Krishal-Modi-Resume.pdf';
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
         }
-
-        // Add smooth scrolling for better user experience
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        // Add parallax effect to floating elements
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const parallaxElements = document.querySelectorAll('.floating-tech');
-            
-            parallaxElements.forEach((element, index) => {
-                const speed = 0.5 + (index * 0.1);
-                element.style.transform = `translateY(${scrolled * speed}px)`;
-            });
-        });
-
-
-
 
 
 
