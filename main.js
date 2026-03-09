@@ -7,11 +7,11 @@
             document.body.style.overflow = '';
         }
 
-        // Enhanced scroll effect with throttling and passive listener
+        // Enhanced scroll effect with throttling
         let ticking = false;
-        const navbar = document.querySelector('.navbar');
 
         function updateNavbar() {
+            const navbar = document.querySelector('.navbar');
             if (window.scrollY > 50) {
                 navbar.classList.add('scrolled');
             } else {
@@ -27,13 +27,13 @@
             }
         }
 
-        window.addEventListener('scroll', requestNavbarUpdate, { passive: true });
+        window.addEventListener('scroll', requestNavbarUpdate);
 
         // Active section highlighting — fixed to target actual sections with IDs
-        const sections = document.querySelectorAll('section[id]');
-        const navLinks = document.querySelectorAll('.nav-link');
-        
         function setActiveNavLink() {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
             let current = '';
             sections.forEach(section => {
                 const sectionTop = section.offsetTop;
@@ -50,10 +50,11 @@
             });
         }
 
+        window.addEventListener('scroll', setActiveNavLink);
+
         // Back to top button visibility
-        const backToTop = document.getElementById('backToTop');
-        
         function updateBackToTop() {
+            const backToTop = document.getElementById('backToTop');
             if (backToTop) {
                 if (window.scrollY > 400) {
                     backToTop.classList.add('active');
@@ -63,44 +64,20 @@
             }
         }
 
-        // Combined scroll handler for better performance
-        let scrollTicking = false;
-        
-        function handleScroll() {
-            setActiveNavLink();
-            updateBackToTop();
-            scrollTicking = false;
-        }
-
-        function requestScrollUpdate() {
-            if (!scrollTicking) {
-                requestAnimationFrame(handleScroll);
-                scrollTicking = true;
-            }
-        }
-
-        window.addEventListener('scroll', requestScrollUpdate, { passive: true });
+        window.addEventListener('scroll', updateBackToTop);
 
         // Enhanced initialization
         document.addEventListener('DOMContentLoaded', function() {
-            // Cache DOM elements
-            const menuToggle = document.getElementById('menu-toggle');
-            const menuContainer = document.querySelector('.nav-menu-container');
-            const yearEl = document.getElementById('current-year');
-            const typingEl = document.getElementById('typing-text');
-            
-            // Stagger nav link animations
-            const navLinksArray = document.querySelectorAll('.nav-link');
-            navLinksArray.forEach((link, index) => {
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach((link, index) => {
                 link.style.animationDelay = `${0.1 * index}s`;
             });
             
             // Smooth scrolling for all anchor links
-            document.addEventListener('click', function(e) {
-                const anchor = e.target.closest('a[href^="#"]');
-                if (anchor) {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
                     e.preventDefault();
-                    const targetId = anchor.getAttribute('href');
+                    const targetId = this.getAttribute('href');
                     const target = document.querySelector(targetId);
                     
                     if (target) {
@@ -116,32 +93,33 @@
                         // Close mobile menu if open
                         closeMenu();
                     }
-                }
+                });
             });
             
             // Enhanced mobile menu toggle
-            if (menuToggle && menuContainer) {
-                menuToggle.addEventListener('change', function() {
-                    if (this.checked) {
-                        menuContainer.classList.add('active');
-                        document.body.style.overflow = 'hidden';
-                    } else {
-                        menuContainer.classList.remove('active');
-                        document.body.style.overflow = '';
-                    }
-                });
-                
-                // Close menu when clicking outside or on overlay
-                menuContainer.addEventListener('click', function(e) {
-                    if (e.target === this) {
-                        closeMenu();
-                    }
-                });
-            }
+            const menuToggle = document.getElementById('menu-toggle');
+            const menuContainer = document.querySelector('.nav-menu-container');
+            
+            menuToggle.addEventListener('change', function() {
+                if (this.checked) {
+                    menuContainer.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                } else {
+                    menuContainer.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            });
+            
+            // Close menu when clicking outside or on overlay
+            menuContainer.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    closeMenu();
+                }
+            });
 
             // Close menu on escape key
             document.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape' && menuToggle && menuToggle.checked) {
+                if (e.key === 'Escape' && menuToggle.checked) {
                     closeMenu();
                 }
             });
@@ -151,17 +129,18 @@
             window.addEventListener('resize', function() {
                 clearTimeout(resizeTimeout);
                 resizeTimeout = setTimeout(function() {
-                    if (window.innerWidth > 768 && menuToggle && menuToggle.checked) {
+                    if (window.innerWidth > 768 && menuToggle.checked) {
                         closeMenu();
                     }
                 }, 250);
-            }, { passive: true });
+            });
 
-            // Set initial active section and back-to-top visibility
+            // Set initial active section
             setActiveNavLink();
             updateBackToTop();
 
             // Dynamic year in footer
+            const yearEl = document.getElementById('current-year');
             if (yearEl) yearEl.textContent = new Date().getFullYear();
 
             // ---- Qualification Tab Switching ----
