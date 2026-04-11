@@ -63,16 +63,6 @@ function updateBackToTop() {
 }
 window.addEventListener('scroll', updateBackToTop, { passive: true });
 
-// ---- Resume Download ----
-function downloadResume() {
-    var link = document.createElement('a');
-    link.href = './resources/Krishal-Modi.pdf';
-    link.download = 'Krishal-Modi-Resume.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-}
-
 // ---- Orientation Change ----
 window.addEventListener('orientationchange', function() {
     setTimeout(function() {
