@@ -230,10 +230,11 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!typingEl) return;
 
         var titles = [
+            'Software Engineer',
             'Backend Developer',
-            'Java & Spring Boot Enthusiast',
-            'Machine Learning Explorer',
-            'Problem Solver'
+            'AI & Data Science Engineer',
+            'DevOps Enthusiast',
+            'Quick Learner and Problem Solver'
         ];
         var titleIndex = 0;
         var charIndex = 0;
@@ -252,7 +253,7 @@ document.addEventListener('DOMContentLoaded', function() {
             var speed = isDeleting ? 40 : 80;
 
             if (!isDeleting && charIndex === current.length) {
-                speed = 2000;
+                speed = 1000;
                 isDeleting = true;
             } else if (isDeleting && charIndex === 0) {
                 isDeleting = false;
