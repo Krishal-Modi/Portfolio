@@ -168,32 +168,33 @@ document.addEventListener('DOMContentLoaded', function() {
     })();
 
     // ========================================
-    // SKILL BARS - Animation on Scroll
+    // SKILL CARDS - Animation on Scroll & Filtering
     // ========================================
     (function() {
-        var allSkillItems = document.querySelectorAll('.skill-item');
+        var allSkillCards = document.querySelectorAll('.skill-card');
 
-        function animateBar(item) {
-            var bar = item.querySelector('.skill-progress');
-            if (!bar) return;
-            var level = bar.getAttribute('data-level');
-            bar.style.transition = 'none';
-            bar.style.width = '0';
-            void bar.offsetWidth;
-            bar.style.transition = 'width 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
-            bar.style.width = level;
+        function animateCard(card, index) {
+            setTimeout(function() {
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0) scale(1)';
+            }, index * 40);
         }
 
         var observer = new IntersectionObserver(function(entries) {
-            entries.forEach(function(entry) {
+            entries.forEach(function(entry, index) {
                 if (entry.isIntersecting) {
-                    animateBar(entry.target);
+                    animateCard(entry.target, index);
                     observer.unobserve(entry.target);
                 }
             });
-        }, { threshold: 0.15 });
+        }, { threshold: 0.1 });
 
-        allSkillItems.forEach(function(item) { observer.observe(item); });
+        allSkillCards.forEach(function(card, index) { 
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(25px) scale(0.95)';
+            card.style.transition = 'all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+            observer.observe(card); 
+        });
 
         // ---- Skill Tab Filtering ----
         var skillTabBtns = document.querySelectorAll('.skill-tab-btn');
@@ -205,13 +206,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 var category = btn.getAttribute('data-skill-tab');
 
-                allSkillItems.forEach(function(item) {
-                    var isMatch = (category === 'all') || (item.getAttribute('data-category') === category);
+                allSkillCards.forEach(function(card, index) {
+                    var isMatch = (category === 'all') || (card.getAttribute('data-category') === category);
                     if (isMatch) {
-                        item.classList.remove('hidden');
-                        setTimeout(function() { animateBar(item); }, 60);
+                        card.classList.remove('hidden');
+                        setTimeout(function() { 
+                            card.style.opacity = '1';
+                            card.style.transform = 'translateY(0) scale(1)';
+                        }, index * 30);
                     } else {
-                        item.classList.add('hidden');
+                        card.classList.add('hidden');
                     }
                 });
             });
